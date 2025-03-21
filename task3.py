@@ -18,10 +18,10 @@ sigma_w = 0
 sigma_s = 0
 
 for i in range(len(sigma_w_values)):
-    sigma_w += 1/(len(sigma_w_values)) * sigma_w_values[i]
+    sigma_w += 1/(len(sigma_w_values)) * sigma_w_values[i]**2
 
 for i in range(len(sigma_s_values)):
-    sigma_w += 1/(len(sigma_s_values)) * sigma_s_values[i]
+    sigma_w += 1/(len(sigma_s_values)) * sigma_s_values[i]**2
 
 imag_H1 = np.imag(x_H1)
 real_H1 = np.real(x_H1)
@@ -33,10 +33,10 @@ chi_H0 = np.zeros(1024, dtype= complex)
 chi_H1 = np.zeros(1024, dtype= complex)
 
 for i in range(len(x_H0)):
-    chi_H0[i] = (1/sigma_w) * np.sqrt(imag_H0[i]**2 + real_H0[i]**2)
+    chi_H0[i] = (1/sigma_w) * np.sqrt(imag_H0[i]**2 + real_H0[i]**2)**2
 
 for i in range(len(x_H1)):
-    chi_H1[i] = (1/(sigma_w + sigma_s)) * np.sqrt(imag_H1[i]**2 + real_H1[i]**2)
+    chi_H1[i] = (1/(sigma_w + sigma_s)) * np.sqrt(imag_H1[i]**2 + real_H1[i]**2)**2
 
 #
 
