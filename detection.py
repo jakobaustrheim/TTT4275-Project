@@ -36,6 +36,8 @@ plt.xlabel("Real Part Values")
 plt.ylabel("Frequency")
 plt.title("Histogram of Real Part")
 
+
+
 # Histogram of Imaginary Part
 plt.subplot(1, 2, 2)
 plt.hist(imag_part, bins=50, color='r', alpha=0.7, edgecolor='black')
@@ -45,5 +47,30 @@ plt.title("Histogram of Imaginary Part")
 
 # Show the plots
 plt.tight_layout()
-plt.show()
+#plt.show
+
+def variance(data):
+    var = 0
+    for i in range(len(data)):
+        var += data[i]**2
+    return var/len(data)
+
+#Compute the variance of the real and imaginary parts
+real_var = variance(real_part)
+imag_var = variance(imag_part)
+
+
+
+def autocorr(x):
+    result = np.correlate(x, x, mode='full')
+    return result[result.size//2:]
+
+#Compute the autocorrelation of the real and imaginary parts
+real_autocorr = autocorr(real_part)
+imag_autocorr = autocorr(imag_part)
+
+#Plot the autocorrelation
+
+mean_sn = np.mean(imag_part)
+print(mean_sn)
 
