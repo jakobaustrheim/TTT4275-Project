@@ -47,7 +47,7 @@ plt.title("Histogram of Imaginary Part")
 
 # Show the plots
 plt.tight_layout()
-#plt.show
+plt.show
 
 def variance(data):
     var = 0
