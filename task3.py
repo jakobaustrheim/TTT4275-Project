@@ -70,9 +70,3 @@ plt.title("Histogram of Chi_H1")
 plt.tight_layout()
 plt.show()
 
-
-
-
-
-
-
